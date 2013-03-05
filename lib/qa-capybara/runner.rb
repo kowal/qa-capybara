@@ -4,21 +4,20 @@ require 'pry'
 Capybara.run_server = false
 Capybara.current_driver = :selenium
 
-
 Pry.config.prompt = [
   proc { "C>" },
   proc { "C*" }
 ]
 
 module QaCapybara
-	class Runner
-		include Capybara::DSL
+  class Runner
+    include Capybara::DSL
 
-		def initialize(app_host=nil)
+    def initialize(app_host=nil)
       Capybara.app_host = app_host || 'http://www.google.com'
-		end
+    end
 
-		def start
+    def start
       visit('/')
       init_size
       print <<-EOS
@@ -52,27 +51,27 @@ module QaCapybara
     end
 
     def help_navigation
-    	print <<-EOS
-      	Navigating					
+      print <<-EOS
+        Navigating
 
-      		visit('/projects')
+          visit('/projects')
 
-      	Clicking links and buttons
+        Clicking links and buttons
 
-      		click_link('Link Text') # or ID
-      		click_button('Save')
-      		click_on('Link or Button Text') # clicks on either links or buttons
+          click_link('Link Text') # or ID
+          click_button('Save')
+          click_on('Link or Button Text') # clicks on either links or buttons
 
-      	Interacting with forms (see Capybara::Node::Actions)
+        Interacting with forms (see Capybara::Node::Actions)
 
-      		fill_in('First Name', :with => 'John')
-      		fill_in('Password', :with => 'Seekrit')
-      		fill_in('Description', :with => 'Really Long Text...')
-      		choose('A Radio Button')
-      		check('A Checkbox')
-      		uncheck('A Checkbox')
-      		attach_file('Image', '/path/to/image.jpg')
-      		select('Option', :from => 'Select Box')
+          fill_in('First Name', :with => 'John')
+          fill_in('Password', :with => 'Seekrit')
+          fill_in('Description', :with => 'Really Long Text...')
+          choose('A Radio Button')
+          check('A Checkbox')
+          uncheck('A Checkbox')
+          attach_file('Image', '/path/to/image.jpg')
+          select('Option', :from => 'Select Box')
       EOS
     end
 
@@ -105,15 +104,9 @@ module QaCapybara
     end
 
 
-		def init_size
+    def init_size
       page.driver.browser.manage.window.resize_to(800,800)
-		end
-
-
-
-
-
-
+    end
 
     def start_console!
       binding.pry
