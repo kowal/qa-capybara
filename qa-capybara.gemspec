@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = Qa::Capybara::VERSION
   gem.authors       = ["Marek Kowalcze"]
   gem.email         = ["marek.kowalcze@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{Capybara Console for QA}
+  gem.summary       = %q{Capybara Console for QA}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)
