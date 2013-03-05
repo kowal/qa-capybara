@@ -2,6 +2,8 @@
 
 Simple Capybara Console.
 
+Work in progress..
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -11,7 +13,19 @@ Add this line to your application's Gemfile:
 
 ## Usage
 
-	$ ruby bin/qac # opens Pry console with capybara waiting on google.com
+	$ ruby bin/qac http://www.google.com
+	# opens Pry console with capybara waiting on google.com
+
+### Cheetsheet
+	> help_navigation
+    > help_finders
+
+### Method documentation
+    > ri fill_in
+
+### Helpers
+    > inspect_inputs
+    > inspect_links
 
 ## Contributing
 

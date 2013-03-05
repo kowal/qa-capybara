@@ -3,18 +3,19 @@ require 'pry'
 
 Capybara.run_server = false
 Capybara.current_driver = :selenium
-Capybara.app_host = 'http://www.google.com'
+
 
 Pry.config.prompt = [
-  proc { "Capy > " },
-  proc { "Capy *" }
+  proc { "C>" },
+  proc { "C*" }
 ]
 
 module QaCapybara
 	class Runner
 		include Capybara::DSL
 
-		def initialize(options=nil)
+		def initialize(app_host=nil)
+      Capybara.app_host = app_host || 'http://www.google.com'
 		end
 
 		def start
@@ -27,8 +28,8 @@ module QaCapybara
 
         ri [method_name]
 
-        get_inputs
-
+        inspect_inputs
+        inspect_links
       EOS
 
       start_console!
