@@ -1,24 +1,17 @@
 # Qa::Capybara
 
-TODO: Write a gem description
+Simple Capybara Console.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'qa-capybara'
-
-And then execute:
-
+    $ git clone git@github.com:kowal/qa-capybara.git
     $ bundle
-
-Or install it yourself as:
-
-    $ gem install qa-capybara
 
 ## Usage
 
-TODO: Write usage instructions here
+	$ ruby bin/qac # opens Pry console with capybara waiting on google.com
 
 ## Contributing
 
